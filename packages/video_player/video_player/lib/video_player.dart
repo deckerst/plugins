@@ -197,6 +197,14 @@ class VideoPlayerController extends ValueNotifier<VideoPlayerValue> {
         formatHint = null,
         super(VideoPlayerValue(duration: null));
 
+  /// Constructs a [VideoPlayerController] playing a video via a content provider URI.
+  VideoPlayerController.uri(String uri, {this.closedCaptionFile})
+      : dataSource = uri,
+        dataSourceType = DataSourceType.file,
+        package = null,
+        formatHint = null,
+        super(VideoPlayerValue(duration: null));
+
   int _textureId;
 
   /// The URI to the video file. This will be in different formats depending on
